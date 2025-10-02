@@ -89,6 +89,7 @@
             border-radius:6px;
             padding:6px 12px;
             font-size:14px;
+            font-weight:bold;
             cursor:pointer;
             transition:background 0.2s,transform 0.1s;
             text-decoration:none;
