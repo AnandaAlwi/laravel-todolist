@@ -24,7 +24,7 @@
         form {
             max-width:480px;
             margin:0 auto;
-            background:whitesmoke;
+            background:black;
             padding:28px 24px;
             border-radius:12px;
             box-shadow:0 6px 16px rgba(0,0,0,0.12);
