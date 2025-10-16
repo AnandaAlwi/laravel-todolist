@@ -89,9 +89,8 @@
     </style>
 </head>
 <body>
-    <h1>Edit Tugas</h1>
-
     <form action="{{ route('tasks.update', $task) }}" method="POST">
+        <h1>Edit Tugas</h1>       
     @csrf 
     @method('PUT')
 
