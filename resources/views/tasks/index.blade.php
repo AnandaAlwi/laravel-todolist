@@ -67,10 +67,10 @@
         }
         .task-title.done {
             text-decoration:line-through;
-            color: #7f8c8d;
+            color: black;
         }
         .task-title a {
-            color: #2c3e50;
+            color: black;
             text-decoration:none;
         }
         .task-title a:hover {
