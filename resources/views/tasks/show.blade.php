@@ -71,9 +71,8 @@
     </style>
 </head>
 <body>
-    <h1>Detail Tugas</h1>
-
     <div class="card">
+        <h1>Detail Tugas</h1>
         <p><strong>Judul:</strong> {{ $task->title }}</p>
         <p><strong>Status:</strong> {{ $task->is_done ? 'Selesai ✅' : 'Belum selesai ❌' }}</p>
        <p><strong>Dibuat pada:</strong> <span id="current-time"></span></p>
