@@ -147,9 +147,6 @@
 
   <div class="card">
     <h2 class="card-title">To Do List Kerja</h2>
-        <a href="{{ route('tasks.create', ['category' => 'kerja']) }}" class="add-task">+ Tambah Tugas Kerja</a>
-  </div>
-
     <ul>
         @foreach ($tasksKerja as $task)
             <li>
@@ -177,11 +174,11 @@
 </body>
 </html>
 
+    <a href="{{ route('tasks.create', ['category' => 'kerja']) }}" class="add-task">+ Tambah Tugas Kerja</a>
+  </div>
 
   <div class="card">
     <h2 class="card-title">To Do List Rumah</h2>
-    <a href="{{ route('tasks.create', ['category' => 'rumah']) }}" class="add-task">+ Tambah Tugas Rumah</a>
-  </div>
    <ul>
         @foreach ($tasksRumah as $task)
             <li>
@@ -208,3 +205,6 @@
     </ul>
 </body>
 </html>
+
+    <a href="{{ route('tasks.create', ['category' => 'rumah']) }}" class="add-task">+ Tambah Tugas Rumah</a>
+  </div>
