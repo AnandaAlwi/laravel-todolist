@@ -65,6 +65,9 @@
       transition: background 0.3s ease, transform 0.2s ease;
       margin-bottom: 25px;
     }
+    .add-task:hover {
+        background:firebrick;
+    }
      ul {
       list-style: none;
     }
