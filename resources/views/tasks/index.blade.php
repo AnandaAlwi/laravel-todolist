@@ -16,17 +16,7 @@
       padding: 40px;
       background-attachment:fixed;
     }
-
     
-    h1 {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 40px;
-      letter-spacing: 1px;
-      color: #ffffff;
-      text-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
-    }
-
     .container {
       display: flex;
       justify-content: center;
