@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
 {
     Schema::table('tasks', function (Blueprint $table) {
-        $table->string('category')->default('kerja'); // bisa diubah sesuai kebutuhan
+        $table->string('category')->default('kerja');
     });
 }
 
