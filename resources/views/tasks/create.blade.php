@@ -80,15 +80,15 @@
 </head> 
 <body>  
     <form action="{{ route('tasks.store') }}" method="POST">
-        <h1>Tambah Tugas Baru</h1>
     @csrf
+    <h1>Tambah Tugas Baru</h1>
+
     <input type="text" name="title" placeholder="Judul tugas" required>
-    @error('title')
-        <p style="color: red; font-size: 14px; margin-top: 5px;">{{ $message }}</p>
-    @enderror
+
+    <input type="hidden" name="category" value="{{ request('category') }}">
+
     <button type="submit">Simpan</button>
 </form>
-
         
     <a href="{{ route('tasks.index') }}" class="back-link">← Kembali</a>
 </body>

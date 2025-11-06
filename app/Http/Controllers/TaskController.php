@@ -10,35 +10,36 @@ use Illuminate\Validation\Rule;
 
 class TaskController extends Controller
 {
-    public function index(): View
-    {
-        $tasks = Task::latest()->get();
-        return view('tasks.index', compact('tasks'));
-    }
+    public function index()
+{
+    $tasksKerja = Task::where('category', 'kerja')->get();
+    $tasksRumah = Task::where('category', 'rumah')->get();
+
+    return view('tasks.index', compact('tasksKerja', 'tasksRumah'));
+}
+
 
     public function create(): View
     {
         return view('tasks.create');
     }
 
-    public function store(Request $request): RedirectResponse
-    {
-        $validated = $request->validate([
-            'title' => ['required', Rule::unique('tasks', 'title')],
-        ], [
-            'title.required' => 'Judul tugas wajib diisi.',
-            'title.unique'   => 'Judul tugas ini sudah ada, silakan gunakan judul lain.',
-        ]);
+    public function store(Request $request)
+{
+    $validated = $request->validate([
+        'title' => 'required|string|max:255',
+        'category' => 'required|string|in:kerja,rumah',
+    ]);
 
-        Task::create([
-            'title'   => $validated['title'],
-            'is_done' => false,
-        ]);
+    Task::create([
+        'title' => $validated['title'],
+        'is_done' => false,
+        'category' => $validated['category'],
+    ]);
 
-        return redirect()
-            ->route('tasks.index')
-            ->with('success', 'Tugas berhasil ditambahkan!');
-    }
+    return redirect()->route('tasks.index')->with('success', 'Tugas berhasil ditambahkan!');
+}
+
 
     public function show(Task $task): View
     {

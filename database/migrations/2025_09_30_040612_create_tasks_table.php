@@ -6,14 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
     public function up(): void
-    {
-        Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->string('title')->unique();
-            $table->boolean('is_done')->default(false);
-            $table->timestamps();
-        });
-    }
+{
+    Schema::table('tasks', function (Blueprint $table) {
+        $table->string('category')->default('kerja'); // default biar aman
+    });
+}
 
     public function down(): void
     {
