@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void
 {
     Schema::table('tasks', function (Blueprint $table) {
-        $table->string('category')->default('kerja'); // default biar aman
+        $table->string('category')->default('kerja');
     });
 }
 
