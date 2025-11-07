@@ -77,7 +77,7 @@
      input[type="checkbox"] {
       transform: scale(1.3);
       cursor: pointer;
-      accent-color:mediumblue;
+      accent-color:steelblue;
     }
 
     .task-title {
