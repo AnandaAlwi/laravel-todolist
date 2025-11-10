@@ -64,6 +64,7 @@
 
     ul li {
       background: rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
       border: 1px solid rgba(255,255,255,0.15);
       border-radius: 10px;
       padding: 14px 18px;
@@ -71,7 +72,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background 0.2s ease;
+      transition: all 0.3s ease;
+      animation:fadeIn 1.2s ease forwards;
+    }
+    ul li:hover {
+      background: rgba(255,255,255,0.25);
     }
 
      input[type="checkbox"] {
