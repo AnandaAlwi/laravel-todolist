@@ -60,6 +60,9 @@
     }
      ul {
       list-style: none;
+      max-width:700px;
+      margin:0 auto;
+      padding:0;
     }
 
     ul li {
