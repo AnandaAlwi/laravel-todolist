@@ -71,17 +71,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: all 0.3s ease;
-      animation:fadeIn 1.2s ease forwards;
-    }
-    ul li:hover {
-      background: rgba(255,255,255,0.25);
+      transition: background 0.2s ease;
     }
 
      input[type="checkbox"] {
       transform: scale(1.3);
       cursor: pointer;
-      accent-color:steelblue;
     }
 
     .task-title {
