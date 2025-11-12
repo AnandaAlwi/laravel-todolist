@@ -27,12 +27,12 @@
 
 
   .card {
-      width: 500px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      padding: 25px 25px 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width:500px;
+      background:black;
+      border-radius:16px;
+      padding:25px 25px 30px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
     }
     
   .card-title {
@@ -43,17 +43,66 @@
       text-transform:capitalize;
     }
 
-  .add-task {
-      display: block;
+    .card2 {
+      width:500px;
+      background:firebrick;
+      border-radius:16px;
+      padding:25px 25px 30px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-title2 {
+      text-align:center;
+      font-size:22px;
+      margin-bottom:20px;
+      color:white;
+      text-transform:capitalize;
+    }
+
+    .card3 {
+      width:500px;
+      background:blue;
+      border-radius:16px;
+      padding:25px 25px 30px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-title3 {
+      text-align:center;
+      font-size:22px;
+      margin-bottom:20px;
+      color:white;
+      text-transform:capitalize;
+    }
+
+    .card4 {
+      width:500px;
+      background:getprotobyname;
+      border-radius:16px;
+      padding:25px 25px 30px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-title4 {
+      text-align:center;
+      font-size:22px;
+      margin-bottom:20px;
+      color:white;
+      text-transform:capitalize;
+    }
+
+    .add-task {
+      display:block;
       background:red;
       color: #fff;
-      padding: 12px 20px;
-      text-align: center;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease, transform 0.2s ease;
-      margin-bottom: 25px;
+      padding:12px 20px;
+      text-align:center;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      transition:background 0.3s ease, transform 0.2s ease;
+      margin-bottom:25px;
     }
     .add-task:hover {
         background:firebrick;
@@ -174,8 +223,8 @@
     <a href="{{ route('tasks.create', ['category' => 'kerja']) }}" class="add-task">+ Tambah Tugas Kerja</a>
   </div>
 
-  <div class="card">
-    <h2 class="card-title">To Do List Rumah</h2>
+  <div class="card2">
+    <h2 class="card-title2">To Do List Rumah</h2>
    <ul>
         @foreach ($tasksRumah as $task)
             <li>
@@ -204,4 +253,69 @@
 </html>
 
     <a href="{{ route('tasks.create', ['category' => 'rumah']) }}" class="add-task">+ Tambah Tugas Rumah</a>
+  </div>
+
+
+  <div class="card3">
+    <h2 class="card-title3">To Do List Sekolah</h2>
+   <ul>
+        @foreach ($tasksSekolah as $task)
+            <li>
+                <form action="{{ route('tasks.toggle', $task) }}" method="POST" style="display:inline;">
+                    @csrf 
+                    @method('PATCH')
+                    <input type="checkbox" onchange="this.form.submit()" {{ $task->is_done ? 'checked' : '' }}>
+                </form>
+
+                <span class="task-title {{ $task->is_done ? 'done' : '' }}">
+                    <a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a>
+                </span>
+
+                <div class="actions">
+                    <a href="{{ route('tasks.edit', $task) }}" class="btn btn-edit">Edit</a>
+                    <form action="{{ route('tasks.destroy', $task) }}" method="POST" style="display:inline;">
+                        @csrf 
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-delete">Hapus</button>
+                    </form>
+                </div>
+            </li>
+        @endforeach
+    </ul>
+</body>
+</html>
+
+    <a href="{{ route('tasks.create', ['category' => 'sekolah']) }}" class="add-task">+ Tambah Tugas Sekolah</a>
+  </div>
+
+  <div class="card4">
+    <h2 class="card-title4">To Do List Santay</h2>
+   <ul>
+        @foreach ($tasksSantay as $task)
+            <li>
+                <form action="{{ route('tasks.toggle', $task) }}" method="POST" style="display:inline;">
+                    @csrf 
+                    @method('PATCH')
+                    <input type="checkbox" onchange="this.form.submit()" {{ $task->is_done ? 'checked' : '' }}>
+                </form>
+
+                <span class="task-title {{ $task->is_done ? 'done' : '' }}">
+                    <a href="{{ route('tasks.show', $task) }}">{{ $task->title }}</a>
+                </span>
+
+                <div class="actions">
+                    <a href="{{ route('tasks.edit', $task) }}" class="btn btn-edit">Edit</a>
+                    <form action="{{ route('tasks.destroy', $task) }}" method="POST" style="display:inline;">
+                        @csrf 
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-delete">Hapus</button>
+                    </form>
+                </div>
+            </li>
+        @endforeach
+    </ul>
+</body>
+</html>
+
+    <a href="{{ route('tasks.create', ['category' => 'santay']) }}" class="add-task">+ Tambah Tugas Santay</a>
   </div>
