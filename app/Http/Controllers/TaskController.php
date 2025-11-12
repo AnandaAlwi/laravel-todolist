@@ -14,8 +14,10 @@ class TaskController extends Controller
 {
     $tasksKerja = Task::where('category', 'kerja')->get();
     $tasksRumah = Task::where('category', 'rumah')->get();
+    $tasksSekolah = Task::where('category', 'sekolah')->get();
+    $tasksSantay = Task::where('category', 'santay')->get();
 
-    return view('tasks.index', compact('tasksKerja', 'tasksRumah'));
+    return view('tasks.index', compact('tasksKerja', 'tasksRumah', 'tasksSekolah', 'tasksSantay'));
 }
 
 
@@ -28,7 +30,7 @@ class TaskController extends Controller
 {
     $validated = $request->validate([
         'title' => 'required|string|max:255',
-        'category' => 'required|string|in:kerja,rumah',
+        'category' => 'required|string|in:kerja,rumah,sekolah,santay',
     ]);
 
     Task::create([
