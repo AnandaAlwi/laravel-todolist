@@ -14,6 +14,7 @@
             color: white;
             padding:40px;
             background-attachment:fixed;
+            margin-top:50px;
         }
         h1 {
             text-align:center;
@@ -22,16 +23,16 @@
             color: #ffffffff;
         }
         .card {
-            max-width:400px;
+            max-width:500px;
             margin:0 auto;
             background:black;
-            padding:28px 24px;
+            padding:35px 30px;
             border-radius:12px;
             box-shadow:0 6px 16px rgba(0,0,0,0.12);
         }
         .card p {
             font-size:18px;
-            margin-bottom:16px;
+            margin-bottom:40px;
             line-height:1.6;
         }
         .card p strong {

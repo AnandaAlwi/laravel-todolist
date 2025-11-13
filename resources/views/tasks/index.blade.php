@@ -78,7 +78,7 @@
 
     .card4 {
       width:500px;
-      background:getprotobyname;
+      background:gray;
       border-radius:16px;
       padding:25px 25px 30px;
       box-shadow:0 10px 25px rgba(0,0,0,0.3);
